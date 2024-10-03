@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Completo para CV</title>
+    <!-- Enlace a la hoja de estilo externa -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+    <h2>Formulario Completo para CV</h2>
+
+    <!-- Inicio del formulario -->
+    <form action="https://formspree.io/f/meojyorp" method="post" id="miFormulario">
+        <fieldset>
+            <legend>Información Personal</legend>
+            <label for="name">Nombre:</label><br>
+            <input type="text" id="name" name="name" required minlength="3" maxlength="50" placeholder="Escriba su nombre"><br><br>
+
+            <label for="lastname">Apellido:</label><br>
+            <input type="text" id="lastname" name="lastname" required minlength="3" maxlength="50" placeholder="Escriba su apellido"><br><br>
+
+            <label for="dob">Fecha de nacimiento:</label><br>
+            <input type="date" id="dob" name="dob" required><br><br>
+
+            <label>Género:</label><br>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Masculino</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Femenino</label><br>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Otro</label><br><br>
+
+            <label for="marital">Estado Civil:</label><br>
+            <select id="marital" name="marital" required>
+                <option value="">Seleccione uno</option>
+                <option value="single">Soltero/a</option>
+                <option value="married">Casado/a</option>
+                <option value="divorced">Divorciado/a</option>
+                <option value="widowed">Viudo/a</option>
+            </select><br><br>
+
+            <label for="address">Dirección:</label><br>
+            <input type="text" id="address" name="address" required placeholder="Ingrese su dirección"><br><br>
+
+            <label for="phone">Número de teléfono:</label><br>
+            <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br><br>
+
+            <label for="email">Correo electrónico:</label><br>
+            <input type="email" id="email" name="email" placeholder="email@ejemplo.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br><br>
+
+            <label for="linkedin">LinkedIn:</label><br>
+            <input type="url" id="linkedin" name="linkedin" placeholder="https://www.linkedin.com/in/usuario"><br><br>
+
+            <label for="twitter">Twitter:</label><br>
+            <input type="url" id="twitter" name="twitter" placeholder="https://www.twitter.com/usuario"><br><br>
+
+            <label for="github">GitHub:</label><br>
+            <input type="url" id="github" name="github" placeholder="https://www.github.com/usuario"><br><br>
+        </fieldset>
+
+        <!-- Agrupación de experiencia laboral -->
+        <fieldset>
+            <legend>Experiencia Laboral</legend>
+            <div style="display: flex; gap: 2rem;">
+                <div>
+                    <label for="currentjob1">Trabajo 1:</label><br>
+                    <input type="text" id="currentjob1" name="currentjob1" placeholder="Título del trabajo"><br><br>
+
+                    <label for="company1">Empresa 1:</label><br>
+                    <input type="text" id="company1" name="company1" placeholder="Nombre de la empresa"><br><br>
+
+                    <label for="jobduration1">Duración 1 (meses/años):</label><br>
+                    <input type="text" id="jobduration1" name="jobduration1" placeholder="Duración del trabajo"><br><br>
+
+                    <label for="prevjob1">Descripción:</label><br>
+                    <textarea id="prevjob1" name="prevjob1" rows="4" cols="30" placeholder="Describa su experiencia laboral..."></textarea>
+                </div>
+
+                <div>
+                    <label for="currentjob2">Trabajo 2:</label><br>
+                    <input type="text" id="currentjob2" name="currentjob2" placeholder="Título del trabajo"><br><br>
+
+                    <label for="company2">Empresa 2:</label><br>
+                    <input type="text" id="company2" name="company2" placeholder="Nombre de la empresa"><br><br>
+
+                    <label for="jobduration2">Duración 2 (meses/años):</label><br>
+                    <input type="text" id="jobduration2" name="jobduration2" placeholder="Duración del trabajo"><br><br>
+
+                    <label for="prevjob2">Descripción:</label><br>
+                    <textarea id="prevjob2" name="prevjob2" rows="4" cols="30" placeholder="Describa su experiencia laboral..."></textarea>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Agrupación de educación -->
+        <fieldset>
+            <legend>Educación</legend>
+            <label for="education">Nivel Educativo:</label><br>
+            <select id="education" name="education" required>
+                <option value="">Seleccione uno</option>
+                <option value="highschool">Secundario</option>
+                <option value="undergrad">Grado Universitario</option>
+                <option value="postgrad">Postgrado</option>
+                <option value="phd">Doctorado</option>
+            </select><br><br>
+
+            <label for="institution">Institución Educativa:</label><br>
+            <input type="text" id="institution" name="institution" placeholder="Nombre de la institución educativa"><br><br>
+        </fieldset>
+
+        <!-- Agrupación de habilidades -->
+        <fieldset>
+            <legend>Habilidades</legend>
+            <label for="skills">Habilidades:</label><br>
+            <textarea id="skills" name="skills" rows="4" cols="50" placeholder="Describa sus habilidades..."></textarea><br><br>
+        </fieldset>
+
+        <input type="submit" value="Enviar CV">
+    </form>
+
+    <script>
+        // Aquí puedes agregar más scripts si es necesario
+    </script>
+</body>
+</html>
